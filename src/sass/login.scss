@@ -1,0 +1,81 @@
+@charset "utf-8";
+#header{
+	h1{margin:0;}
+	padding:0;
+	border:none;
+	box-shadow:none;
+}
+#gnb {display:none;}
+
+#container{
+	padding-left:15px;
+	padding-right:15px;
+
+	form fieldset>div {
+		background-color:#f5f6f7;
+		padding:15px;
+		margin-bottom:30px;
+		p:first-child,p:first-child+p {
+			position:relative;
+			padding-left:60px;
+			margin-bottom:3px;
+		}
+		p:first-child+p+p {
+			padding:15px 0 15px 60px;
+			#save_id+label{
+				margin-right:10px;
+			}
+		}
+		p:first-child+p+p+p {
+			position:relative;
+			border-top:1px solid #dee2e5;
+			margin:0 -15px;
+			padding:15px 40px;
+			font-size:12px;
+			&:after{
+				content:"";
+				display:block;
+				border-bottom:1px solid #fff;
+				position:absolute;
+				width:100%;
+				left:0;
+				top:0;
+			}
+		}
+
+		label[for=user_id],label[for=user_pw] {
+			position:absolute;
+			left:0;
+			top:2px;
+			color:#244581;
+			font-weight:bold;
+		}
+		#user_id,#user_pw{
+			height:20px;
+			line-height:25px;
+			padding:3px 0;
+			width:100%;
+		}
+		&+p {
+			text-align:center;
+			input {
+				color:#244581;
+				font-weight:bold;
+				font-size:15px;
+				text-shadow:0 0 2px rgba(0,0,0,0.5);
+				border:1px solid #244581;
+				border-radius:4px;
+				padding:8px 20px;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f2f5f9+75 */
+				background: rgb(255,255,255); /* Old browsers */
+				background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(242,245,249,1) 75%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(242,245,249,1) 75%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(242,245,249,1) 75%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f5f9',GradientType=0 ); /* IE6-9 */
+			}
+		}
+	}
+
+	
+
+}

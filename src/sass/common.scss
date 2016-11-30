@@ -19,16 +19,17 @@
 *,*:before,*:after{margin:0;padding:0;box-sizing:border-box;}
 li{list-style:none;}
 img,video{vertical-align:middle;max-width:100%;border:none;}
+input{vertical-align:middle;}
 fieldset{border:none;}
 a{text-decoration:none;color:#333;}
 a:hover,a:focus{color:#415ce1;}
 html{font-size:14px;}
 body,input[type=text],input[type=tel],input[type=url],input[type=search],input[type=password],select,textarea{
-	font:1em/1.3 'Malgun Gothic','맑은 고딕',gulim, '굴림', 'Dotum','돋움','sans-serif';
+	font:1em/1.3 Arial, 'Malgun Gothic','맑은 고딕',gulim, '굴림', 'Dotum','돋움','sans-serif';
 	color:#333;
 }
 h1,h2,h3,h4,h5,h6,strong,em,address{font-size:100%;font-weight:normal;font-style:normal;}
-.blind{position:absolute;left:-9999px;}
+.blind,legend{position:absolute;left:-9999px;}
 caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hidden;}
 
 .clearFix:after{
@@ -106,6 +107,46 @@ caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hi
 	}	
 }
 
+#container{padding-bottom:20px;}
+#footer{
+	background-color:#F4F7FA;
+	border:1px solid #CAD3E4;
+	padding:10px 0;
+	text-align:center;
+	.child_inline li{
+		//ie7에서는 block요소에 inline-block 안먹음. ie7무시하므로 진행
+		display:inline-block;
+		margin-bottom:10px;
+		padding-left:15px;
+		position:relative;
+		&:before{
+			content:"";
+			display:inline-block;
+			width:1px;
+			height:12px;
+			background-color:#cdd1de;
+			position:absolute;
+			left:5px;
+			top:4px;
+		}
+		&:first-child{
+			padding:0;
+			&:before{
+				content:none;
+			}			
+		}
+	}
+}
+/* 타이틀 서식 */
+.tit_1 {
+	font-size:18px;
+	color:#244581;
+	font-weight:bold;
+	margin-bottom:15px;
+	padding-left:10px;
+	letter-spacing:-0.05em;
+}
+
 .grid {
 	.row{
 		*zoom:1;
@@ -131,19 +172,20 @@ caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hi
 }
 
 @media (max-width:480px) {
-	.col_mobile_1{width:8.33333%;}
-	.col_mobile_2{width:8.33333%*2;}
-	.col_mobile_3{width:8.33333%*3;}
-	.col_mobile_4{width:8.33333%*4;}
-	.col_mobile_5{width:8.33333%*5;}
-	.col_mobile_6{width:8.33333%*6;}
-	.col_mobile_7{width:8.33333%*7;}
-	.col_mobile_8{width:8.33333%*8;}
-	.col_mobile_9{width:8.33333%*9;}
-	.col_mobile_10{width:8.33333%*10;}
-	.col_mobile_11{width:8.33333%*11;}
-	.col_mobile_12{width:100%;}
-	
+	.grid{
+		.col_mobile_1{width:8.33333%;}
+		.col_mobile_2{width:8.33333%*2;}
+		.col_mobile_3{width:8.33333%*3;}
+		.col_mobile_4{width:8.33333%*4;}
+		.col_mobile_5{width:8.33333%*5;}
+		.col_mobile_6{width:8.33333%*6;}
+		.col_mobile_7{width:8.33333%*7;}
+		.col_mobile_8{width:8.33333%*8;}
+		.col_mobile_9{width:8.33333%*9;}
+		.col_mobile_10{width:8.33333%*10;}
+		.col_mobile_11{width:8.33333%*11;}
+		.col_mobile_12{width:100%;}
+	}
 }
 
 
