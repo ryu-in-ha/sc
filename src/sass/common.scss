@@ -31,6 +31,9 @@ body,input[type=text],input[type=tel],input[type=url],input[type=search],input[t
 h1,h2,h3,h4,h5,h6,strong,em,address{font-size:100%;font-weight:normal;font-style:normal;}
 .blind,legend{position:absolute;left:-9999px;}
 caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hidden;}
+button,input[type=button],input[type=submit],input[type=reset]{
+	cursor:pointer;
+}
 
 .clearFix:after{
 	content:""; 
@@ -47,6 +50,9 @@ caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hi
 	padding-bottom:20px;
 	//아래쪽 글이랑 간격
 	margin-bottom:20px;
+	.go_back{
+		display:none;
+	}
 	h1 {
 		background-color:#5580CF;
 		text-align:center;
@@ -78,6 +84,7 @@ caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hi
 	   }
 	}
 	#gnb {		
+		display:none;
 		li{
 			float:left;
 			//높이가 다르면 float된 요소가 아래로 밀리더라도 아래로 10px 떨어지게끔
@@ -110,7 +117,7 @@ caption{text-indent:-9999px;font-size:1px;height:0;overflow:hidden;visibility:hi
 #container{padding-bottom:20px;}
 #footer{
 	background-color:#F4F7FA;
-	border:1px solid #CAD3E4;
+	border-top:1px solid #CAD3E4;
 	padding:10px 0;
 	text-align:center;
 	.child_inline li{

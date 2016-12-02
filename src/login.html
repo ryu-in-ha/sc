@@ -1,6 +1,43 @@
 <? include "inc/top.html"; ?>
   <title>SLRCLUB | 회원가입</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css" media="all" />
+	<script type="text/javascript">
+	window.onload = function() {
+			var member_f = document.querySelector("#member_f");
+
+			function regMsg(m1, m2) {
+					alert(m1);
+					m2.value = "";
+					m2.focus();
+			}
+			// event 핸들러에서 매개변수가 들어가면 event 객체가 들어감
+			//e.preventDefault()가 return false와 같은 역할을 해줌
+			var chkMember = function(e) {
+				e.preventDefault();
+				var user_id = this.user_id;
+				var reg_id = /^[a-z]+\w{4,11}$/g;
+				var result = reg_id.exec(user_id.value);
+				if(result == null) {
+					regMsg("아이디 형식이 일치하지 않습니다.", user_id);
+					return false;
+				}				
+
+				var user_pw = this.user_pw;
+				var reg_pw = /^\w{7,11}[!-)@]+\w*$/g;
+				var result_pw = reg_pw.exec(user_pw.value);
+				if(result_pw == null) {
+					regMsg("비밀번호 형식이 일치하지 않습니다.\n반드시 특수문자를 포함시켜야 합니다", user_pw);
+					return false;
+				}
+
+				this.submit();
+
+			}
+			member_f.onsubmit = chkMember;
+		}
+		
+	
+	</script>
  </head>
  <body>
   <div id="wrap">
@@ -9,7 +46,7 @@
 		<!-- //헤더영역 -->
   	<div id="container" class="grid">
 			<h3 class="tit_1">SLRCLUB LOGIN</h3>
-			<form action="#" method="post">
+			<form action="#" method="post" id="member_f">
 				<fieldset>
 					<legend>회원로그인</legend>
 					<div>
